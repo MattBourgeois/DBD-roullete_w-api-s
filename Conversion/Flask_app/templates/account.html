@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My account</title>
+	<style>
+		body{
+			background: img src="{{ url_for('static', filename='mount.webp') }}" no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<h1></h1>
+		<a href="/dash">Dashboard!</a>
+		<a href="/new/comment">Make a Comment!</a>
+	</nav>
+	<div id="content">
+		<p>this div is going to show the comments of all the users.</p>
+	</div>
+</body>
+</html>

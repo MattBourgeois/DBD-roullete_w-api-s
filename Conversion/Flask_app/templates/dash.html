@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+	<nav>
+		<h1>{{today}}</h1>
+		<a href="/reset">Home</a>
+		<a href="/acc">Account</a>
+		<a href="/logout">Logout</a>
+	</nav>
+	<div id="content">
+		<div id="left">
+			<h3>Killer Perks!</h3>
+			<form action="/roll/killer">
+				{% for kill in session['name'] %}
+				<input type="text" class="text" readonly value="{{kill}}">
+				{% endfor %}
+				<input type="submit" name="Roll" id="">
+				<img src="{{ url_for('static', filename='images/mike.gif') }}" alt="mike">
+			</form>
+		</div>
+		<div id="right">
+			<h3>Survivor Perks!</h3>
+			<div id="surv">
+				<form action="/roll">
+					{% for perk in session['perks'] %}
+					<input class="text" type="text" readonly value="{{perk}}">
+				
+					{% endfor %}
+					<input type="submit" name="roll" id="">
+				<div>
+					<img src="{{ url_for('static', filename='images/come.gif') }}">
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
